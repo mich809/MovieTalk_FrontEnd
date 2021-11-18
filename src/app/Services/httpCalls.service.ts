@@ -12,7 +12,17 @@ export class httpCalls {
   constructor(private httpClient : HttpClient) { }
 
   registerUser(user : User){     
-    return this.httpClient.post(this.url+"/register",user);  
-   
+    return this.httpClient.post(this.url+"/register",user);     
   }
+
+  loginUser(user:User){  
+    return this.httpClient.post<user>(this.url+"/authenticate",user)
+  }
+
+
+}
+
+interface user{
+  username : string,
+  jwtToken : string
 }

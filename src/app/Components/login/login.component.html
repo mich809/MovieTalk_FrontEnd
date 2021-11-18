@@ -1,11 +1,12 @@
 <form #loginForm="ngForm" action="">
+  {{ user | json }}
   <div class="form-group">
     <br />
     <input
       type="text"
       class="form-control"
       name="username"
-      [(ngModel)]="userModel.username"
+      [(ngModel)]="user.username"
       placeholder="Username"
     />
   </div>
@@ -15,7 +16,7 @@
       type="password"
       class="form-control"
       name="password"
-      [(ngModel)]="userModel.password"
+      [(ngModel)]="user.password"
       placeholder="Password"
     />
   </div>
