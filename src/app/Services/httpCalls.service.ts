@@ -7,7 +7,7 @@ import { User } from '../Models/user';
 })
 export class httpCalls {
 
-  url : string = "http://localhost:8081"
+  url : string = "http://localhost:8080"
 
   constructor(private httpClient : HttpClient) { }
 
