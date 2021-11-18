@@ -9,8 +9,9 @@ import {httpCalls} from "../../Services/httpCalls.service"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-    user = new User('','') 
-    token : string = ''
+    user = new User('','')    
+ 
+   
   
 
   constructor(private httpcaller : httpCalls) { }
@@ -18,12 +19,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginUser(){
-      this.httpcaller.loginUser(this.user).subscribe(data=>{   
-        this.token = data.jwtToken
-        console.log(this.token)
+  loginUser(){  
+        this.httpcaller.loginUser(this.user).subscribe(data=>{ 
+     
+        console.log(data.jwtToken)
         
       })
   }
 
-}
+ 
+ 
+  }
+
+

@@ -1,4 +1,4 @@
-<form #loginForm="ngForm" action="">
+<form #RegisterForm="ngForm" action="">
   <div class="form">
     <input
       type="text"
@@ -7,6 +7,7 @@
       [(ngModel)]="user.username"
       placeholder="Username"
       minlength="4"
+      required
     />
   </div>
 
@@ -17,6 +18,8 @@
       name="password"
       [(ngModel)]="user.password"
       placeholder="Password"
+      minlength="4"
+      required
     />
   </div>
 
@@ -27,10 +30,16 @@
       name="Comfirm-password"
       [(ngModel)]="confirmPassword"
       placeholder="Confirm Password"
+      required
     />
   </div>
 
-  <button type="submit" (click)="registerUser()" style="margin-top: 15px">
+  <button
+    type="submit"
+    (click)="registerUser()"
+    style="margin-top: 15px"
+    [disabled]="!RegisterForm.valid"
+  >
     Register
   </button>
 </form>
