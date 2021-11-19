@@ -10,7 +10,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms'
 import { RegisterComponent } from './Components/register/register.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { HomeComponent } from './Components/home/home.component'
  
 
 
@@ -18,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http'
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
