@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './Components/profile/profile.component';
+import { HomeComponent } from './Components/home/home.component';
+import { LandingPageComponent } from './Components/landing-page/landing-page.component';
+
 
 //Here is where we create all of our routes and which Angular scans for avaiable routes.
 // paths dont start with '/' and components dont go in quotes.
 const routes: Routes = [
   {
-    path: 'profile',
-    component: ProfileComponent
+    path:'',
+    component: LandingPageComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   }
 ];
 

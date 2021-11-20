@@ -12,7 +12,9 @@ import {FormsModule} from '@angular/forms'
 import { RegisterComponent } from './Components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './Components/profile/profile.component';
-import { HomeComponent } from './Components/home/home.component'
+import { HomeComponent } from './Components/home/home.component';
+import { LandingPageComponent } from './Components/landing-page/landing-page.component';
+
  
 
 
@@ -22,7 +24,8 @@ import { HomeComponent } from './Components/home/home.component'
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

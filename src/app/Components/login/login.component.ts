@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(){  
         this.httpcaller.loginUser(this.user).subscribe(data=>{ 
-     
+             
         console.log(data.jwtToken)
         
       })
