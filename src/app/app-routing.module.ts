@@ -16,20 +16,23 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children:[
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'search',
+        component: SearchComponent
+      },
+      {
+        path: 'community',
+        component: CommunityComponent
+      }
+    ]
   },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'search',
-    component: SearchComponent
-  },
-  {
-    path: 'community',
-    component: CommunityComponent
-  }
+
 ];
 
 @NgModule({
