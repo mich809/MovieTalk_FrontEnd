@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms'
 import { RegisterComponent } from './Components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+ 
  
 
 
@@ -32,10 +34,12 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatGridListModule,
-    NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
 
   ],
   providers: [],
