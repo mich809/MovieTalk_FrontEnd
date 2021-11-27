@@ -18,8 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { SearchComponent } from './Components/search/search.component';
 import { CommunityComponent } from './Components/community/community.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { MovieComponent } from './components/movie-list/movie/movie.component';
+import { MovieListComponent } from './Components/movie-list/movie-list.component';
+import { MovieComponent } from './Components/movie-list/movie/movie.component'
  
  
 
@@ -35,7 +35,8 @@ import { MovieComponent } from './components/movie-list/movie/movie.component';
     SearchComponent,
     CommunityComponent,
     MovieListComponent,
-    MovieComponent
+    MovieComponent,
+ 
   ],
   imports: [
     BrowserModule,
