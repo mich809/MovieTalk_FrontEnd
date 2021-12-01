@@ -18,8 +18,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { SearchComponent } from './Components/search/search.component';
 import { CommunityComponent } from './Components/community/community.component';
-import { MovieListComponent } from './Components/movie-list/movie-list.component';
-import { MovieComponent } from './Components/movie-list/movie/movie.component'
+import { MovieCardComponent } from './Components/movie-card/movie-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {FlexModule} from '@angular/flex-layout/flex';
+import { MainComponent } from './Components/main/main.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {  ReactiveFormsModule } from '@angular/forms';
+
+
  
  
 
@@ -34,8 +41,11 @@ import { MovieComponent } from './Components/movie-list/movie/movie.component'
     LandingPageComponent,
     SearchComponent,
     CommunityComponent,
-    MovieListComponent,
-    MovieComponent,
+    MovieCardComponent,
+    MainComponent,
+  
+
+
  
   ],
   imports: [
@@ -49,6 +59,13 @@ import { MovieComponent } from './Components/movie-list/movie/movie.component'
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    MatCardModule,
+    FlexModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
+    
+
 
   ],
   providers: [],
