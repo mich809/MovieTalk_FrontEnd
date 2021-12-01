@@ -1,0 +1,14 @@
+mat-sidenav {
+  width: 20%;
+  background: hsl(212, 100%, 18%);
+  color: white;
+}
+
+.links {
+  height: 100vh;
+  font-size: 30px;
+}
+mat-icon {
+  transform: scale(3);
+  margin-right: 25px;
+}

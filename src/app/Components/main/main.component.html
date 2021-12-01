@@ -1,0 +1,24 @@
+<mat-sidenav-container class="color" fullscreen>
+  <mat-sidenav mode="side" opened class="mat-elevation-z8">
+    <div class="links" fxLayout="column" fxLayoutAlign="space-around center">
+      <a [routerLink]="['home']">
+        <mat-icon class="icon-display">home</mat-icon><span>Home</span>
+      </a>
+
+      <a [routerLink]="['profile']">
+        <mat-icon class="icon-display">person</mat-icon> <span> Profile</span>
+      </a>
+
+      <a [routerLink]="['search']">
+        <mat-icon class="icon-display">search</mat-icon> <span> Search</span>
+      </a>
+
+      <a [routerLink]="['community']">
+        <mat-icon class="icon-display">group</mat-icon> <span> Community</span>
+      </a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="content"
+    ><router-outlet></router-outlet
+  ></mat-sidenav-content>
+</mat-sidenav-container>
