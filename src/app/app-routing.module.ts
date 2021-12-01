@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommunityComponent } from './Components/community/community.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
+import { MainComponent } from './Components/main/main.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SearchComponent } from './Components/search/search.component';
 
@@ -15,9 +16,14 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'main',
+    component: MainComponent,
     children:[
+      {
+        path:'home',
+        component: HomeComponent
+
+      },
       {
         path: 'profile',
         component: ProfileComponent
