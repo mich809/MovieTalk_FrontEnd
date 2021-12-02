@@ -11,13 +11,15 @@ export class httpCalls {
 
   constructor(private httpClient : HttpClient) { }
 
-  registerUser(user : User){     
-    return this.httpClient.post(this.url+"/register",user);     
+  registerUser(user : User){   
+    return this.httpClient.post(this.url+"/user/register",user);     
   }
 
-  loginUser(user:User){  
-    return this.httpClient.post<user>(this.url+"/authenticate",user)
+  loginUser(user:User){      
+    return this.httpClient.post<user>(this.url+"/user/authenticate",user)
+   
   }
+
 
 
 }
