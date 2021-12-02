@@ -1,0 +1,27 @@
+<div>
+  <div *ngIf="movies.length">
+    <div class="container">
+      <div *ngFor="let movie of movies; index as i">
+        <div>
+          <mat-card
+            class="movie-card"
+            (click)="goToMoviePage(movie.original_title)"
+          >
+            <mat-card-header>
+              <mat-card-title>{{ movie.original_title }}</mat-card-title>
+              <mat-card-subtitle
+                >Release Date: {{ movie.release_date }}</mat-card-subtitle
+              >
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="http://image.tmdb.org/t/p/w300{{ movie?.poster_path }}"
+              alt=" {{ movie.original_title }} "
+            />
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!movies.length" class="container">Nothing</div>
+</div>

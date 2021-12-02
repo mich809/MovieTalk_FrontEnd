@@ -1,0 +1,14 @@
+.container {
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.movie-card {
+  max-width: 350px;
+}
+
+.movie-card:hover {
+  width: 355px;
+}
