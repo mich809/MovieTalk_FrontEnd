@@ -30,7 +30,7 @@ export class LoginComponent  {
   
 
 
-  constructor(private httpcaller : httpCalls , private router : Router , private formBuilder: FormBuilder,) { }
+  constructor(private httpcaller : httpCalls , private router : Router , private formBuilder: FormBuilder) { }
 
 
 
