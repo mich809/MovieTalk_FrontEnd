@@ -25,6 +25,7 @@ import { MainComponent } from './Components/main/main.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { MovieComponent } from './Components/movie/movie.component';
 
 
  
@@ -43,6 +44,7 @@ import {  ReactiveFormsModule } from '@angular/forms';
     CommunityComponent,
     MovieCardComponent,
     MainComponent,
+    MovieComponent,
   
 
 
