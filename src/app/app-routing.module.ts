@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommunityComponent } from './Components/community/community.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -6,6 +6,7 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
 import { MainComponent } from './Components/main/main.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SearchComponent } from './Components/search/search.component';
+import {MovieComponent} from './Components/movie/movie.component'
 
 
 //Here is where we create all of our routes and which Angular scans for avaiable routes.
@@ -30,11 +31,16 @@ const routes: Routes = [
       },
       {
         path: 'search',
-        component: SearchComponent
+        component: SearchComponent,
+      
       },
       {
         path: 'community',
         component: CommunityComponent
+      }, 
+      {
+         path: 'search/movie/:id',
+        component:  MovieComponent
       }
     ]
   },
