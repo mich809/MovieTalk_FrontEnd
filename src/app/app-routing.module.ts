@@ -6,7 +6,7 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
 import { MainComponent } from './Components/main/main.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SearchComponent } from './Components/search/search.component';
-import {MovieComponent} from './Components/movie/movie.component'
+import {MovieComponent} from './Components/movie-details/movie.component'
 
 
 //Here is where we create all of our routes and which Angular scans for avaiable routes.
