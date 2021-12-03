@@ -10,8 +10,7 @@ import {APIcallerService} from "../../Services/apicaller.service"
 })
 export class SearchComponent implements OnInit {
   movieTitle = ''
-  movies : Movie [] = [   
-  ]
+  movies !: Movie[] 
 
 
   constructor(private caller : APIcallerService) { }
@@ -21,7 +20,7 @@ export class SearchComponent implements OnInit {
 
   searchMovie(){   
     this.movies = []
-    this.caller.searchMovie(this.movieTitle).subscribe(data =>{
+    this.caller.searchMovies(this.movieTitle).subscribe(data =>{
       this.movies = data.results   
       this.movies.forEach((element,index)=>{     
             if(element.poster_path == null && element.backdrop_path == null){             
@@ -31,9 +30,7 @@ export class SearchComponent implements OnInit {
       })  
     })}
 
-  searchImage(){
-    
-  }
+  
   
   
   
