@@ -3,12 +3,9 @@
     <div class="container">
       <div *ngFor="let movie of movies; index as i">
         <div>
-          <mat-card
-            class="movie-card"
-            (click)="goToMoviePage(movie.original_title)"
-          >
+          <mat-card class="movie-card" (click)="goToMoviePage(movie.id)">
             <mat-card-header>
-              <mat-card-title>{{ movie.original_title }}</mat-card-title>
+              <mat-card-title>{{ movie.original_title }} </mat-card-title>
               <mat-card-subtitle
                 >Release Date: {{ movie.release_date }}</mat-card-subtitle
               >

@@ -11,8 +11,8 @@ import { MovieComponent } from '../movie/movie.component';
 })
 export class MovieCardComponent implements OnInit {
 
-  @Input() movies : Movie[] = []
-  url : string = 'main/movie'
+  @Input() movies !: Movie[] 
+
 
   
     
@@ -22,9 +22,9 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  goToMoviePage(movieTitle : string ){  
+  goToMoviePage(movieID : string ){    
   
-    this.router.navigate(['main/search/movie',movieTitle])
+    this.router.navigate(['main/search/movie',movieID])
   
     
     
