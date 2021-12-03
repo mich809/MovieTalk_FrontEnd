@@ -1,0 +1,27 @@
+<!-- <img
+  src="http://image.tmdb.org/t/p/w342{{ movie?.poster_path }}"
+  alt=" {{ movie.original_title }} "
+/> -->
+
+<div class="container">
+  <div class="top-container">
+    <div class="movie">
+      <img
+        src="http://image.tmdb.org/t/p/w300{{ movie?.poster_path }}"
+        alt=" {{ movie.original_title }} "
+      />
+      <h1>Watch Trailer</h1>
+    </div>
+
+    <div class="movieInfo">
+      <h1>{{ movie.original_title }}</h1>
+      <p>{{ movie.runtime + " min" }}</p>
+      <p>{{ movie.overview }}</p>
+      <p>{{ "Country: United States of America" }}</p>
+      <p>{{ "Genre:" }}</p>
+      <p>{{ "Released: " + movie.release_date }}</p>
+    </div>
+  </div>
+
+  <div class="comments"></div>
+</div>
