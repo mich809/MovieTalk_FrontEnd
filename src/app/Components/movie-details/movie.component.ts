@@ -10,15 +10,19 @@ import {APIcallerService} from "../../Services/apicaller.service"
 })
 export class MovieComponent implements OnInit {
   
-  movie !: Movie;
+  movie !: Movie 
+  status: boolean = false;
 
-  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService) { }
+  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService) {
+    
+   }
       
      
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
       const id = params['id']
       this.getMovie(id)
+     
   })
   }
 
@@ -29,5 +33,12 @@ export class MovieComponent implements OnInit {
          
       })
   }
+
+  favoriteMovie(){   
+    this.status = !this.status;
+    console.log(this.status)
+  }
+
+
 
 }

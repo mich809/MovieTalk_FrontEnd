@@ -1,27 +1,39 @@
-<!-- <img
-  src="http://image.tmdb.org/t/p/w342{{ movie?.poster_path }}"
-  alt=" {{ movie.original_title }} "
-/> -->
-
 <div class="container">
   <div class="top-container">
     <div class="movie">
       <img
-        src="http://image.tmdb.org/t/p/w300{{ movie?.poster_path }}"
+        src="http://image.tmdb.org/t/p/w500{{ movie?.poster_path }}"
         alt=" {{ movie.original_title }} "
       />
-      <h1>Watch Trailer</h1>
+
+      <button mat-raised-button color="primary" (click)="favoriteMovie()">
+        <mat-icon
+          class="icon-display"
+          [ngClass]="status ? 'btn-change' : 'icon-display'"
+          >favorite</mat-icon
+        >
+        Add To Favorites
+      </button>
+
+      <button mat-raised-button color="warn">
+        <mat-icon class="icon-display">play_arrow</mat-icon> Watch Trailer
+      </button>
+
+      <button mat-raised-button color="accent">
+        <mat-icon class="icon-display">question_answer</mat-icon> Post A Comment
+      </button>
     </div>
 
     <div class="movieInfo">
-      <h1>{{ movie.original_title }}</h1>
-      <p>{{ movie.runtime + " min" }}</p>
+      <h1 style="font-size: 50px">{{ movie.original_title }}</h1>
+
       <p>{{ movie.overview }}</p>
       <p>{{ "Country: United States of America" }}</p>
       <p>{{ "Genre:" }}</p>
       <p>{{ "Released: " + movie.release_date }}</p>
+      <p>{{ "Runtime: " + movie.runtime + " min" }}</p>
     </div>
   </div>
 
-  <div class="comments"></div>
+  <div class="comments">Comments:</div>
 </div>
