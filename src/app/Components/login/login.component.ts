@@ -37,7 +37,7 @@ export class LoginComponent  {
     loginUser() : void{   
      let user = new User(this.loginForm.controls['username'].value,this.loginForm.controls['password'].value)   
      this.httpcaller.loginUser(user).subscribe(data => {        
-         this.setSession(data.jwtToken)
+         this.setSession(data.username, data.jwtToken)
         
      },error => {
         console.log('error')
@@ -48,8 +48,12 @@ export class LoginComponent  {
   }
 
   
-  private setSession(authResult : any) {       
+  private setSession(username : string ,authResult : any) {       
     localStorage.setItem('token', authResult);
+    localStorage.setItem('username', username);
+
+    
+
    
  
     

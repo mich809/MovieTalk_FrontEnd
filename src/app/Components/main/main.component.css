@@ -1,7 +1,10 @@
 mat-sidenav {
   width: 20%;
-  background: hsl(212, 100%, 18%);
-  color: white;
+  background: rgb(42, 157, 143);
+}
+
+.links span {
+  color: rgb(244, 162, 97);
 }
 
 .links {
@@ -11,4 +14,12 @@ mat-sidenav {
 mat-icon {
   transform: scale(3);
   margin-right: 25px;
+  color: rgb(244, 162, 97);
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 35px;
 }
