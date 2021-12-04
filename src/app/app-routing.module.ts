@@ -48,7 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],  //This means that it is avaiable for the entire application
+  imports: [RouterModule.forRoot(routes)],  //This means that it is available for the entire application
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
