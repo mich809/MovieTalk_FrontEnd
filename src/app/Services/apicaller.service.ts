@@ -26,4 +26,10 @@ export class APIcallerService {
       return this.httpClient.get<any>(this.base_url+'movie/'+id, {params: params})
 
   }
+
+  getNowPlaying(){
+    let params = new HttpParams().set('api_key',this.apiKey).set('page',1).set('language','en-US');   
+    return this.httpClient.get<any>(this.base_url+'movie/now_playing',{params: params})
+
+  }
 }
