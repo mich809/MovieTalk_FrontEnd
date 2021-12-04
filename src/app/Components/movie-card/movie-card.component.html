@@ -1,12 +1,12 @@
 <div>
   <div *ngIf="movies.length">
     <div class="container">
-      <div *ngFor="let movie of movies; index as i">
+      <div *ngFor="let movie of movies">
         <div>
           <mat-card class="movie-card" (click)="goToMoviePage(movie.id)">
             <mat-card-header>
               <mat-card-title>{{ movie.original_title }} </mat-card-title>
-              <mat-card-subtitle
+              <mat-card-subtitle style="color: white"
                 >Release Date: {{ movie.release_date }}</mat-card-subtitle
               >
             </mat-card-header>
@@ -20,5 +20,4 @@
       </div>
     </div>
   </div>
-  <div *ngIf="!movies.length" class="container">Nothing</div>
 </div>

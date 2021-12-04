@@ -6,9 +6,12 @@
 }
 
 .movie-card {
-  max-width: 250px;
+  max-width: 350px;
+  background: rgb(42, 157, 143);
+  color: white;
 }
 
 .movie-card:hover {
-  width: 355px;
+  border: 5px solid;
+  border-color: rgb(231, 111, 81);
 }
