@@ -3,6 +3,7 @@ import { User } from 'src/app/Models/user';
 import {httpCalls} from "../../Services/httpCalls.service"
 import { FormBuilder, Validators ,FormControl} from '@angular/forms';
 import {passwordMatchValidator} from '../../Services/passwordMatchValidator'
+import { createImportSpecifier } from 'typescript';
  
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ export class RegisterComponent implements OnInit  {
    password = new FormControl('', [Validators.required,Validators.minLength(8)]);
    confirmPassword = new FormControl('', [Validators.required,Validators.minLength(8) ]);
 
-  hide = true;
+   hide = true;
+
+   message : string = ''
 
  
   registrationForm = this.formBuilder.group({
@@ -41,10 +44,8 @@ export class RegisterComponent implements OnInit  {
          
         }else{  
           let user = new User(this.registrationForm.controls['username'].value,this.registrationForm.controls['password'].value)  
-          this.httpcaller.registerUser(user).subscribe(data =>{
-              console.log(typeof(data))
-
-          })
+          console.log(user)
+          this.httpcaller.registerUser(user).subscribe(data => this.message = "Register Succesfully.", error => this.message = "Username is already taken")
         }
         
        

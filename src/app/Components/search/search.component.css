@@ -13,13 +13,12 @@ form.search input[type="text"] {
   height: 50px;
 }
 
-/* Style the submit button */
 form.search button {
   float: left;
   width: 20%;
   height: 50px;
-  background: rgb(42, 157, 143);
-  color: white;
+  background: rgb(141, 153, 174);
+  color: rgb(237, 242, 244);
   font-size: 47px;
   border: 1px solid grey;
   border-left: none;
