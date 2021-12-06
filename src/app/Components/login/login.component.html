@@ -1,35 +1,55 @@
-<form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="form">
-  <mat-form-field appearance="outline">
-    <mat-label>Username</mat-label>
-    <input matInput formControlName="username" />
-  </mat-form-field>
+<div class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Username"
+        formControlName="username"
+      />
+      <mat-error *ngIf="loginForm.controls['username'].invalid">
+        username is required
+      </mat-error>
+    </mat-form-field>
 
-  <div [hidden]="username.valid || username.untouched" class="error">
-    <div [hidden]="!username.hasError('required')">Username is required.</div>
-  </div>
+    <div></div>
 
-  <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Password</mat-label>
-    <input
-      matInput
-      [type]="hide ? 'password' : 'text'"
-      formControlName="password"
-    />
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
-      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-    </button>
-  </mat-form-field>
-  <div [hidden]="password.valid || password.untouched" class="error">
-    <div [hidden]="!password.hasError('required')">password is required.</div>
-  </div>
-  <br />
-  <div><button type="submit" [disabled]="!loginForm.valid">Login</button></div>
-</form>
+      <mat-error *ngIf="!loginForm.controls['password'].valid">
+        password is required
+      </mat-error>
+    </mat-form-field>
+
+    <div style="margin-top: 10px">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="button"
+        [disabled]="!loginForm.valid"
+      >
+        <mat-icon class="icon-display">chevron_right</mat-icon>
+        <span> Login</span>
+      </button>
+    </div>
+  </form>
+</div>

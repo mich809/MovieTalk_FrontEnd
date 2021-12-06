@@ -35,7 +35,8 @@ export class LoginComponent  {
 
 
     loginUser() : void{   
-     let user = new User(this.loginForm.controls['username'].value,this.loginForm.controls['password'].value)   
+     let user = new User(this.loginForm.controls['username'].value,this.loginForm.controls['password'].value)  
+     console.log(user) 
      this.httpcaller.loginUser(user).subscribe(data => {        
          this.setSession(data.username, data.jwtToken)
         
