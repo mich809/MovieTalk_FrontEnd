@@ -25,7 +25,13 @@ import { MainComponent } from './Components/main/main.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {  ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 import { MovieComponent } from './Components/movie-details/movie.component';
+import { TrailerComponent } from './Components/movie-details/trailer/trailer.component';
+import { CommentComponent } from './Components/movie-details/comment/comment.component';
+import { FavoritesComponent } from './Components/movie-details/favorites/favorites.component';
+
+
 
 
  
@@ -44,7 +50,12 @@ import { MovieComponent } from './Components/movie-details/movie.component';
     CommunityComponent,
     MovieCardComponent,
     MainComponent,
-    MovieComponent
+    MovieComponent,
+    TrailerComponent,
+    CommentComponent,
+    FavoritesComponent
+
+
   
   
 
@@ -66,7 +77,11 @@ import { MovieComponent } from './Components/movie-details/movie.component';
     FlexModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+
+
+  
     
 
 
