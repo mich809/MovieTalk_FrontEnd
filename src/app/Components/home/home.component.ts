@@ -9,7 +9,7 @@ import {APIcallerService} from "../../Services/apicaller.service"
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-   username : string |null = localStorage.getItem('username')
+   username : string  = localStorage.getItem('username')
    movies !: Movie[] 
    
 
