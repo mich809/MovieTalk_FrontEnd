@@ -16,6 +16,7 @@ import { FormBuilder, Validators ,FormControl} from '@angular/forms';
 export class LoginComponent  { 
   username = new FormControl('', [Validators.required ]);
   password = new FormControl('', [Validators.required]);
+  message : string = ''
 
   hide = true;
 
@@ -36,14 +37,15 @@ export class LoginComponent  {
 
     loginUser() : void{   
      let user = new User(this.loginForm.controls['username'].value,this.loginForm.controls['password'].value)  
-     console.log(user) 
+   
      this.httpcaller.loginUser(user).subscribe(data => {        
          this.setSession(data.username, data.jwtToken)
+         
         
      },error => {
-        console.log('error')
+       this.message = 'wrong username and/or password'
      },()=>{
-       this.router.navigateByUrl('/main/home')
+      this.router.navigateByUrl('/main/home')
      }
       )
   }
@@ -52,13 +54,7 @@ export class LoginComponent  {
   private setSession(username : string ,authResult : any) {       
     localStorage.setItem('token', authResult);
     localStorage.setItem('username', username);
-
-    
-
-   
- 
-    
-}  
+  }  
 
 
    
