@@ -6,7 +6,7 @@
         alt=" {{ movie.original_title }} "
       />
 
-      <button mat-raised-button color="primary" (click)="favoriteMovie()">
+      <button mat-raised-button color="primary" (click)="addToFavorites()">
         <mat-icon
           class="icon-display"
           [ngClass]="status ? 'btn-change' : 'icon-display'"
@@ -15,11 +15,11 @@
         Add To Favorites
       </button>
 
-      <button mat-raised-button color="warn">
+      <button mat-raised-button color="warn" (click)="watchTrailer()">
         <mat-icon class="icon-display">play_arrow</mat-icon> Watch Trailer
       </button>
 
-      <button mat-raised-button color="accent">
+      <button mat-raised-button color="accent" (click)="postComment()">
         <mat-icon class="icon-display">question_answer</mat-icon> Post A Comment
       </button>
     </div>
