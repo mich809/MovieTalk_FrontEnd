@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Models/user';
+import { Observable } from 'rxjs';
+import {Movie} from "../Models/movie.model"
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +14,21 @@ export class httpCalls {
 
   constructor(private httpClient : HttpClient) { }
 
-  registerUser(user : User){   
-    return this.httpClient.post(this.url+"/user/register",user);     
+  registerUser(user : User): Observable<any>{   
+    return this.httpClient.post(this.url+"/user/register",user,{responseType: 'text',observe:'response'});     
   }
 
-  loginUser(user:User){      
-    return this.httpClient.post<user>(this.url+"/user/authenticate",user)
-   
+  loginUser(user:User): Observable<any>{      
+    return this.httpClient.post(this.url+"/user/authenticate",user);
+    
+  }
+
+  saveToFavorites(movie : Movie){
+    console.log(movie)
+    let headers = new HttpHeaders().set('Authorization', 'Bearer '+ localStorage.getItem('token'))   
+    return this.httpClient.post(this.url+"/user/likeMovie",movie,{headers: headers})
+    
+
   }
 
 

@@ -32,4 +32,9 @@ export class APIcallerService {
     return this.httpClient.get<any>(this.base_url+'movie/now_playing',{params: params})
 
   }
+
+  getTrailer(id:string){
+    let params = new HttpParams().set('api_key',this.apiKey)
+    return this.httpClient.get<any>(this.base_url+'movie/'+id+'/videos',{params : params})
+  }
 }
