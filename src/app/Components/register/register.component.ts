@@ -40,11 +40,11 @@ export class RegisterComponent implements OnInit  {
   }
   registerUser(){
         if (this.registrationForm.controls['password'].value != this.registrationForm.controls['confirmPassword'].value){
-          console.log('password does not match')
+          this.message = 'passwords does not match'
          
         }else{  
           let user = new User(this.registrationForm.controls['username'].value,this.registrationForm.controls['password'].value)  
-          console.log(user)
+          this.message = ''
           this.httpcaller.registerUser(user).subscribe(data => this.message = "Register Succesfully.", error => this.message = "Username is already taken")
         }
         
