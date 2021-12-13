@@ -7,6 +7,7 @@ import { MainComponent } from './Components/main/main.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SearchComponent } from './Components/search/search.component';
 import {MovieComponent} from './Components/movie-details/movie.component'
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 
 //Here is where we create all of our routes and which Angular scans for avaiable routes.
@@ -43,7 +44,9 @@ const routes: Routes = [
         component:  MovieComponent
       }
     ]
-  },
+  },{
+    path: '**', component: PageNotFoundComponent
+  }
 
 ];
 

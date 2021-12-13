@@ -30,6 +30,7 @@ import { MovieComponent } from './Components/movie-details/movie.component';
 import { TrailerComponent } from './Components/movie-details/trailer/trailer.component';
 import { CommentComponent } from './Components/movie-details/comment/comment.component';
 import { FavoritesComponent } from './Components/movie-details/favorites/favorites.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 
 
@@ -53,7 +54,8 @@ import { FavoritesComponent } from './Components/movie-details/favorites/favorit
     MovieComponent,
     TrailerComponent,
     CommentComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    PageNotFoundComponent
 
 
   
