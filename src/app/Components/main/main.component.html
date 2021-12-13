@@ -16,6 +16,11 @@
       <a [routerLink]="['community']">
         <mat-icon class="icon-display">group</mat-icon> <span> Community</span>
       </a>
+
+      <a (click)="logOut()" style="cursor: pointer">
+        <mat-icon class="icon-display">exit_to_app</mat-icon>
+        <span> Log out</span>
+      </a>
     </div>
   </mat-sidenav>
   <mat-sidenav-content style="background-color: rgb(237, 242, 244)"
