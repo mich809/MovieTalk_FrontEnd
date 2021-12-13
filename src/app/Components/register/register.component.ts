@@ -1,9 +1,9 @@
 import { Component,OnInit } from '@angular/core';
-import { User } from 'src/app/Models/user';
-import {httpCalls} from "../../Services/httpCalls.service"
+import { User } from 'src/app/Models/user.model';
+import {httpCalls} from "../../Services/backendClient"
 import { FormBuilder, Validators ,FormControl} from '@angular/forms';
-import {passwordMatchValidator} from '../../Services/passwordMatchValidator'
-import { createImportSpecifier } from 'typescript';
+
+
  
 @Component({
   selector: 'app-register',

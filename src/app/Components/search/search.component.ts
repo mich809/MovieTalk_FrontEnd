@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/Models/movie.model';
-import {APIcallerService} from "../../Services/apicaller.service"
+import {APIcallerService} from "../../Services/movieDatabaseClient"
 
 
 @Component({
