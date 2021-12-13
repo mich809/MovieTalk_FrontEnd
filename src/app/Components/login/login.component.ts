@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/Models/user';
-import {httpCalls} from "../../Services/httpCalls.service"
+import { User } from 'src/app/Models/user.model';
+import {httpCalls} from "../../Services/backendClient"
 import {Router} from "@angular/router"
 import { FormBuilder, Validators ,FormControl} from '@angular/forms';
 
