@@ -20,7 +20,7 @@
       </button>
 
       <button mat-raised-button color="accent" (click)="postComment()">
-        <mat-icon class="icon-display">question_answer</mat-icon> Post A Comment
+        <mat-icon class="icon-display">grade</mat-icon> Rate Movie
       </button>
     </div>
 
@@ -35,5 +35,15 @@
     </div>
   </div>
 
-  <div class="comments">Comments:</div>
+  <form (ngSubmit)="postComment()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+
+      <textarea matInput [formControl]="CommentForm"></textarea>
+      <button mat-button matSuffix>Submit</button>
+    </mat-form-field>
+  </form>
+  <div *ngFor="let commet of comments">
+    <div style="margin: 30px">{{ comment }}</div>
+  </div>
 </div>

@@ -2,13 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute} from '@angular/router';
 import {Movie} from "../../Models/movie.model";
-import {APIcallerService} from "../../Services/apicaller.service"
+import {APIcallerService} from "../../Services/movieDatabaseClient"
 import { TrailerComponent } from './trailer/trailer.component';
-import {MovieTrailer} from "../../Models/movie-trailer"
+import {MovieTrailer} from "../../Models/movieTrailer.model"
 import {DomSanitizer} from '@angular/platform-browser';
-import { CommentComponent } from './comment/comment.component';
+
 import { FavoritesComponent } from './favorites/favorites.component';
-import {httpCalls} from "../../Services/httpCalls.service"
+import {httpCalls} from "../../Services/backendClient"
+import { FormBuilder, FormControl} from '@angular/forms';
+import { Comment } from "../../Models/comment.model"
+
+
  
 
 
@@ -21,12 +25,16 @@ import {httpCalls} from "../../Services/httpCalls.service"
 export class MovieComponent implements OnInit {
   
   movie : Movie 
+  comment : Comment
+  comments : any
   trailer : MovieTrailer
   status: boolean = false;
+  CommentForm = new FormControl('');
+
 
   
 
-  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService, private dialog : MatDialog,private sanitizer : DomSanitizer,private backendCaller : httpCalls) {}
+  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService, private dialog : MatDialog,private sanitizer : DomSanitizer,private backendCaller : httpCalls, private formBuilder: FormBuilder) {}
       
      
   ngOnInit(): void { 
@@ -34,6 +42,7 @@ export class MovieComponent implements OnInit {
       const id = params['id']
       this.getMovie(id)
       this.getTrailer(id)
+      this.getComments(id)
       })}
 
 
@@ -61,7 +70,9 @@ export class MovieComponent implements OnInit {
       this.dialog.open(FavoritesComponent,{
         data: this.movie.original_title + " has been added to your favorites."
       }) 
-      this.saveMovietoBackend(this.movie)
+      this.backendCaller.saveToFavorites(this.movie).subscribe(data =>{
+        console.log(data)
+      })
     }
     else {
       this.dialog.open(FavoritesComponent,{
@@ -74,20 +85,29 @@ export class MovieComponent implements OnInit {
   watchTrailer(){   
       this.dialog.open(TrailerComponent,{
         data : this.trailer['url']
-
-      }) 
-   
+      })    
   }
 
-  postComment(){
-    this.dialog.open(CommentComponent) 
-  }
-
-  saveMovietoBackend(movie:Movie){
-    this.backendCaller.saveToFavorites(movie).subscribe(data =>{
+  postComment(){  
+    this.comment = new Comment(this.CommentForm.value , localStorage.getItem("username"))      
+    console.log(this.comment)
+    this.backendCaller.addComment(this.comment , this.movie.id).subscribe(data=>{
       console.log(data)
     })
+    this.CommentForm.reset()
+
   }
+
+  getComments(id : string){
+    
+    this.backendCaller.getAllComments(id).subscribe(data=>{
+        console.log(data)
+  
+
+    })
+  }
+
+  
 
 
 
