@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private backEndCaller : httpCalls) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
     this.favoriteMovies = []
     this.backEndCaller.getFavorites().subscribe(data=>{
       this.favoriteMovies = data
