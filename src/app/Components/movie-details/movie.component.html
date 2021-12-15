@@ -19,7 +19,7 @@
         <mat-icon class="icon-display">play_arrow</mat-icon> Watch Trailer
       </button>
 
-      <button mat-raised-button color="accent" (click)="postComment()">
+      <button mat-raised-button color="accent" (click)="postRating()">
         <mat-icon class="icon-display">grade</mat-icon> Rate Movie
       </button>
     </div>
@@ -29,9 +29,9 @@
 
       <p>{{ movie.overview }}</p>
       <p>{{ "Country: United States of America" }}</p>
-      <p>{{ "Genre:" }}</p>
       <p>{{ "Released: " + movie.release_date }}</p>
       <p>{{ "Runtime: " + movie.runtime + " min" }}</p>
+      <p>{{ "Your rating: " + rating }}</p>
     </div>
   </div>
 
@@ -43,7 +43,9 @@
       <button mat-button matSuffix>Submit</button>
     </mat-form-field>
   </form>
-  <div *ngFor="let commet of comments">
-    <div style="margin: 30px">{{ comment }}</div>
+  <div *ngFor="let comment of comments">
+    <div style="margin: 10px">
+      {{ comment.postedBy + " : " + comment.comment }}
+    </div>
   </div>
 </div>

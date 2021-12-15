@@ -8,9 +8,12 @@ import {MovieTrailer} from "../../Models/movieTrailer.model"
 import {DomSanitizer} from '@angular/platform-browser';
 
 import { FavoritesComponent } from './favorites/favorites.component';
+
 import {httpCalls} from "../../Services/backendClient"
 import { FormBuilder, FormControl} from '@angular/forms';
 import { Comment } from "../../Models/comment.model"
+import {RatingComponent} from "./rating/rating.component"
+
 
 
  
@@ -26,15 +29,16 @@ export class MovieComponent implements OnInit {
   
   movie : Movie 
   comment : Comment
-  comments : any
+  comments : Comment[] | any
   trailer : MovieTrailer
-  status: boolean = false;
+  status: boolean ;
   CommentForm = new FormControl('');
+  rating : number = 0
 
 
   
 
-  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService, private dialog : MatDialog,private sanitizer : DomSanitizer,private backendCaller : httpCalls, private formBuilder: FormBuilder) {}
+  constructor(private activatedRoute : ActivatedRoute ,private caller : APIcallerService, public dialog : MatDialog,private sanitizer : DomSanitizer,private backendCaller : httpCalls) {}
       
      
   ngOnInit(): void { 
@@ -43,6 +47,8 @@ export class MovieComponent implements OnInit {
       this.getMovie(id)
       this.getTrailer(id)
       this.getComments(id)
+      this.getRating(id)
+      
       })}
 
 
@@ -86,11 +92,13 @@ export class MovieComponent implements OnInit {
       this.dialog.open(TrailerComponent,{
         data : this.trailer['url']
       })    
+
+     
   }
 
   postComment(){  
     this.comment = new Comment(this.CommentForm.value , localStorage.getItem("username"))      
-    console.log(this.comment)
+    this.comments.push(this.comment)
     this.backendCaller.addComment(this.comment , this.movie.id).subscribe(data=>{
       console.log(data)
     })
@@ -98,15 +106,43 @@ export class MovieComponent implements OnInit {
 
   }
 
-  getComments(id : string){
-    
+    getComments(id : string){    
     this.backendCaller.getAllComments(id).subscribe(data=>{
-        console.log(data)
-  
+          console.log(data)
+         this.comments = data        
+        })
+    }
 
-    })
+    postRating(){
+       const dialogRef = this.dialog.open(RatingComponent,{ 
+       disableClose: true,
+       data: 0,
+     
+      })   
+      dialogRef.afterClosed().subscribe(results => {(
+       this.rating = results.data
+       )    
+        
+         this.backendCaller.postRating(this.movie.id,this.rating).subscribe(results=>{
+        console.log(results)
+      })
+     
+     })  
+   
+    
+    
+    
+
+
+   
   }
 
+  getRating(id : string){
+    this.backendCaller.getRating(id).subscribe(results =>{    
+      this.rating = results as number
+       
+    })
+  }
   
 
 
