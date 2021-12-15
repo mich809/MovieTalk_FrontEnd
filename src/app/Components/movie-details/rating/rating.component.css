@@ -1,0 +1,9 @@
+ngb-rating {
+  color: gold;
+  font-size: 80px;
+}
+
+.mat-dialog-content {
+  padding-top: 30px;
+  overflow-y: hidden !important;
+}
