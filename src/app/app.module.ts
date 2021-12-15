@@ -28,9 +28,10 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MovieComponent } from './Components/movie-details/movie.component';
 import { TrailerComponent } from './Components/movie-details/trailer/trailer.component';
-import { CommentComponent } from './Components/movie-details/comment/comment.component';
 import { FavoritesComponent } from './Components/movie-details/favorites/favorites.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingComponent } from './Components/movie-details/rating/rating.component';
 
 
 
@@ -53,9 +54,9 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
     MainComponent,
     MovieComponent,
     TrailerComponent,
-    CommentComponent,
     FavoritesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RatingComponent
 
 
   
@@ -81,6 +82,7 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
     MatInputModule,
     ReactiveFormsModule,
     MatDialogModule,
+    NgbModule,
 
 
   
