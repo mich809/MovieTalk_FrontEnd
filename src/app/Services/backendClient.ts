@@ -24,7 +24,8 @@ export class httpCalls {
     return this.httpClient.post(this.url+"/user/authenticate",user);
   }
 
-  saveToFavorites(movie : Movie){  
+  saveToFavorites(movie : Movie){   
+
     return this.httpClient.post(this.url+"/movie/likeMovie",movie,{headers: this.headers})    
   }
     
@@ -44,6 +45,20 @@ export class httpCalls {
   getAllComments(id : string){
     let params = new HttpParams().set('id', id);   
     return this.httpClient.get(this.url+"/movie/getComments",{headers:this.headers, params: params})
+  }
+
+  getRating(id : string){
+    let params = new HttpParams().set('id', id);   
+    return this.httpClient.get(this.url+"/movie/getRating",{headers:this.headers, params: params})
+
+  }
+
+  postRating(id:string , rating : number){
+    let params = new HttpParams().set('id', id).set('rating',rating);  
+    console.log(this.headers)
+    return  this.httpClient.post(this.url+"/movie/postRating",{headers: this.headers, params: params})
+    
+
   }
 
 
