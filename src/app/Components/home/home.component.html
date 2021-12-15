@@ -1,3 +1,7 @@
-{{ username }}
-
-<app-movie-card [movies]="movies"></app-movie-card>
+<div class="container">
+  <div class="welcome-message">
+    <h1>{{ "Welcome, " + username }}</h1>
+  </div>
+  <h2>these are today's trending movies:</h2>
+  <app-movie-card [movies]="movies"></app-movie-card>
+</div>
