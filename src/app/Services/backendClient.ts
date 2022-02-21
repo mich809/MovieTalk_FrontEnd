@@ -11,7 +11,7 @@ import { Comment } from '../Models/comment.model';
 })
 export class httpCalls {
 
-   url : string = "http://localhost:8080"
+   url : string = "https://movietalk-backend.herokuapp.com"
    headers = new HttpHeaders().set('Authorization', 'Bearer '+ localStorage.getItem('token'))   
 
   constructor(private httpClient : HttpClient) { }
